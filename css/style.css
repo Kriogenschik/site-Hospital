@@ -1,0 +1,12 @@
+@import url(../css/NullStyle.css);
+@import url(../css/base.css);
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/body.css);
+body {
+  height: 100%;
+}
+
+body.lock {
+  overflow: hidden;
+}

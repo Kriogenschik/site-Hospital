@@ -1,0 +1,226 @@
+@import url(../css/fonts.css);
+.footer {
+  background-color: #171717;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Open sans";
+  font-size: 16px;
+}
+.footer__main {
+  padding: 100px 10px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media (max-width: 1200px) {
+  .footer__main {
+    padding-top: calc(10px + 90 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .footer__main {
+    padding-bottom: calc(10px + 90 * ((100vw - 320px) / 880));
+  }
+}
+.footer__main-columns {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__bot {
+  background-color: #1a1a1a;
+}
+.footer__bot-copyright {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 13px;
+  color: #615555;
+}
+@media (max-width: 992px) {
+  .footer__main {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .footer__main-columns {
+    flex-direction: column;
+  }
+}
+
+.footer-column__title {
+  font-weight: 700;
+  color: white;
+  font-size: 22px;
+  padding-bottom: 60px;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .footer-column__title {
+    padding-bottom: calc(20px + 40 * ((100vw - 320px) / 880));
+  }
+}
+.footer-column__row {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.footer-column__input {
+  padding-top: 20px;
+}
+@media (max-width: 992px) {
+  .footer-column__row, .footer-column__list, .footer-column__column {
+    display: none;
+  }
+  .footer-column__row.open {
+    display: flex;
+    gap: 10px;
+  }
+  .footer-column__list.open, .footer-column__column.open, .footer-column__inputs.open {
+    display: block;
+  }
+  .footer-column__title {
+    cursor: pointer;
+  }
+  .footer-column__title:hover {
+    font-size: 23px;
+  }
+  .footer-column__title::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 90%;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-top: 9px solid #1a9bdc;
+    border-right: 9px solid transparent;
+    transition-duration: 0.3s;
+  }
+  .footer-column__title.open::after {
+    transform: rotate(180deg);
+  }
+}
+
+.column-get {
+  flex: 0 0 30%;
+}
+
+.column-our {
+  flex: 0 0 18%;
+}
+
+.column-form {
+  flex: 0 0 23%;
+}
+
+.column-quick {
+  flex: 0 0 16%;
+}
+
+.column-row__item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .column-row__item {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.column-row__icon {
+  flex: 0 0 45px;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column-row__img {
+  position: absolute;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.column-row__text {
+  line-height: 1.5;
+}
+.column-row__social {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.column-row__ref {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.column-row__ico {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.column-list__item {
+  margin-bottom: 25px;
+  position: relative;
+}
+.column-list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-left: 7px solid #1a9bdc;
+  border-bottom: 7px solid transparent;
+}
+.column-list__ref {
+  position: relative;
+  left: 15px;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.column-list__ref:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-input__item {
+  margin-bottom: 10px;
+  background-color: #171717;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-input__item:focus {
+  border-bottom: 1px solid #1a9bdc;
+}
+.footer-input__item::-moz-placeholder {
+  font-size: 16px;
+}
+.footer-input__item:-ms-input-placeholder {
+  font-size: 16px;
+}
+.footer-input__item::placeholder {
+  font-size: 16px;
+}
+.footer-input__mess {
+  height: 110px;
+  resize: none;
+}
+.footer-input__button {
+  margin-top: 25px;
+  background-color: #1a9bdc;
+  padding: 12px 35px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.footer-input__button:hover {
+  box-shadow: 0 0 5px #1a9bdc;
+}

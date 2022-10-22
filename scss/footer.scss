@@ -1,0 +1,212 @@
+@use './adaptive';
+@import url(../css/fonts.css);
+
+$mainColor: #1a9bdc;
+$textColor:#474747;
+$maxWidth:1200px;
+
+.footer {
+   background-color: #171717;
+   color: rgba(255, 255, 255, 0.5);
+   font-family: 'Open sans';
+   font-size: 16px;
+   &__main {
+      padding: 100px 10px;
+      @include adaptive.adaptive-value("padding-top", 100, 10, 1);
+      @include adaptive.adaptive-value("padding-bottom", 100, 10, 1);
+   }
+   &__main-columns {
+      display: flex;
+      justify-content: space-between;
+   }
+   &__bot {
+      background-color: #1a1a1a;
+   }
+   &__bot-copyright {
+      text-align: center;
+      padding: 50px 0;
+      font-size: 13px;
+      color: #615555;
+   }
+   @media (max-width:992px){
+      &__main{
+         width: 60%;
+         margin: 0 auto;
+      }
+      &__main-columns{
+         flex-direction: column;
+      }
+   }
+}
+.footer-column {
+   &__title {
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+      @include adaptive.adaptive-value("padding-bottom", 60, 20, 1);
+      position: relative;
+   }
+   &__row {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+   }
+   &__input {
+      padding-top: 20px;
+   }
+   @media (max-width:992px){
+      &__row,
+      &__list,
+      &__column{
+         display: none;
+      }
+      &__row.open{
+         display: flex;
+         gap:10px;
+      }
+      &__list.open,
+      &__column.open,
+      &__inputs.open{
+         display: block;
+      }
+      &__title{
+         cursor: pointer;
+      }
+      &__title:hover{
+         font-size: 23px;
+      }
+      &__title::after{
+         content: '';
+         position: absolute;
+         top: 5px;left: 90%;
+         width: 0;
+         height: 0;
+         border-left: 9px solid transparent;
+         border-top: 9px solid $mainColor;
+         border-right: 9px solid transparent;
+         transition-duration: 0.3s;
+      }
+      &__title.open::after{
+         transform: rotate(180deg);
+      }
+   }
+}
+.column-get {
+   flex: 0 0 30%;
+}
+.column-our {
+   flex: 0 0 18%;
+}
+.column-form {
+   flex: 0 0 23%;
+}
+.column-quick {
+   flex: 0 0 16%;
+}
+.column-row {
+   &__item {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+   }
+   @media(max-width:480px){
+      &__item{
+         flex-direction: column;
+         gap: 10px;
+      }
+   }
+   &__icon {
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &__img {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+   }
+   &__text {
+      line-height: 1.5;
+   }
+   &__social {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+   }
+   &__ref {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+   }
+   &__ico {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+   }
+}
+.column-list {
+   &__item {
+      margin-bottom: 25px;
+      position: relative;
+   }
+   &__item::before{
+      content: '';
+      position: absolute;
+      top: 0;left: 0;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-left: 7px solid $mainColor;
+      border-bottom: 7px solid transparent;
+   }
+   &__ref {
+      position: relative;
+      left: 15px;
+      padding: 10px;
+      color: rgba(255, 255, 255, 0.5);
+   }
+   &__ref:hover{
+      color: rgba(255, 255, 255, 0.8);
+   }
+}
+.footer-input {
+   
+   &__item{
+      margin-bottom: 10px;
+      background-color: #171717;
+      font-size: 16px;
+      color: rgba(255, 255, 255);
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+   }
+   &__item:focus{
+      border-bottom: 1px solid $mainColor;
+   }
+   &__item::placeholder{
+      font-size: 16px;
+   }
+   &__mess {
+      height: 110px;
+      resize: none;
+   }
+   &__button {
+      margin-top: 25px;
+      background-color: $mainColor;
+      padding: 12px 35px;
+      border-radius: 20px;
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+   }
+   &__button:hover{
+      box-shadow: 0 0 5px $mainColor;
+   }
+}

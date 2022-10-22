@@ -1,0 +1,19 @@
+@use './adaptive';
+@import url(../css/NullStyle.css);
+@import url(../css/base.css);
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/body.css);
+
+$mainColor: #1a9bdc;
+$textColor:#474747;
+$maxWidth:1200px;
+
+body{
+   height: 100%;
+}
+body.lock{
+   overflow: hidden;
+}
+
+

@@ -1,0 +1,47 @@
+@use './adaptive';
+
+$mainColor: #1a9bdc;
+$textColor:#474747;
+$maxWidth:1200px;
+
+.container{
+   max-width: $maxWidth;
+   margin: 0 auto;
+}
+.wrapper{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.title {
+   color:$textColor ;
+   font-family: Montserrat;
+   @include adaptive.adaptive-value("font-size", 48, 24, 1);
+   font-weight: 700;
+   line-height: 1.2;
+}
+.text {
+   color:$textColor ;
+   font-family: Montserrat;
+   @include adaptive.adaptive-value("font-size", 16, 14, 1);
+   font-weight: 400;
+   line-height: 1.4;  
+}
+.button {
+   font-family: Lato;
+   @include adaptive.adaptive-value("font-size", 18, 14, 1);
+   font-weight: 700;
+   color: white;
+   padding: 15px 25px;
+   text-transform: uppercase;
+   background-color: $mainColor;
+   border-radius: 25px;
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.205);
+   transition-duration: 0.3s;
+   &:hover{
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.397);
+   }
+}
+.textblock {
+   text-align: center;
+}
